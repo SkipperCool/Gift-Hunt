@@ -1,0 +1,77 @@
+<md-card class="gift-hint">
+  <md-card>
+    <md-card-content style="text-align: left;">
+      <h2>And few more questions...</h2>
+    </md-card-content>
+    <md-card-content style="text-align: left;padding: 20px 20px 0px">1. What is the first gift I ever gave you?</md-card-content>
+    <md-card-actions>
+      <form name="f2" *ngIf='!markAnswer1'>
+        <md-input-container>
+          <input name="answerField" mdInput placeholder="Your Answer" [(ngModel)]="answer1">
+        </md-input-container>
+        <button md-raised-button (click)="checkAnswer()">Submit</button>
+      </form>
+      <div [className]="className" *ngIf='!markAnswer2 && className2!=="silver" && className2!=="gold"'>
+        <md-icon style="font-size:90px; text-align:center; width:100px; height: 80px">{{icon}}</md-icon>
+      </div>
+    </md-card-actions>
+  </md-card>
+
+  <md-card *ngIf='markAnswer1'>
+    <md-card-content style="text-align: left;padding: 20px 20px 0px">2. Which one would you like?
+      <ol style="list-style-type: upper-alpha;">
+        <li><a href="http://mixyourwatch.com/index.php?data=alu_gold-sport_midnightblue" target="_blank">a gold case with a blue strap</a></li>
+        <li><a href="http://mixyourwatch.com/index.php?data=alu_norm-sport_white" target="_blank">a silver case with a white strap</a></li>
+      </ol>
+    </md-card-content>
+    <md-card-actions>
+      <form name="f2">
+        <md-input-container>
+          <input name="answerField" mdInput placeholder="A or B" [(ngModel)]="answer2">
+        </md-input-container>
+        <button md-raised-button (click)="checkAnswer2()">Submit</button>
+      </form>
+      <div [className]="className2" *ngIf='markAnswer2'>
+        <md-icon style="font-size:90px; text-align:center; width:100px; height: 80px">{{icon}}</md-icon>
+      </div>
+    </md-card-actions>
+  </md-card>
+
+
+  <md-card *ngIf='markAnswer1 && markAnswer2 && answer2=="A"'>
+    <md-card-content style="text-align: left;padding: 20px 20px 0px">
+      3. How many leap years have you experienced?
+    </md-card-content>
+    <md-card-actions>
+      <form name="f2">
+        <md-input-container>
+          <input name="answerField" mdInput placeholder="Your answer:" [(ngModel)]="answer3">
+        </md-input-container>
+        <button md-raised-button (click)="checkAnswer3()">Submit</button>
+      </form>
+      <div *ngIf='markAnswer1 && markAnswer2 && answer2=="A" && markAnswer3' class="gold" style="background-color: black; width:100%; font-family: cursive;">
+        <md-icon>vpn_key</md-icon> : 007
+        <div> Get your <md-icon>{{icon}}</md-icon> from the Check-In bags</div>
+      </div>
+    </md-card-actions>
+  </md-card>
+
+
+  <md-card *ngIf='markAnswer1 && markAnswer2 && answer2=="B"'>
+    <md-card-content style="text-align: left;padding: 20px 20px 0px">
+      3. How many times have you seen Mahabali?
+    </md-card-content>
+    <md-card-actions>
+      <form name="f2">
+        <md-input-container>
+          <input name="answerField" mdInput placeholder="Your answer:" [(ngModel)]="answer4">
+        </md-input-container>
+        <button md-raised-button (click)="checkAnswer4()">Submit</button>
+      </form>
+      <div *ngIf='markAnswer1 && markAnswer2 && answer2=="B" && markAnswer4' class="silver" style="background-color: black; width:100%; font-family: cursive;">
+        <md-icon>vpn_key</md-icon> : 028
+        <div> Get your <md-icon>{{icon}}</md-icon> from the Check-In bags</div>
+      </div>
+    </md-card-actions>
+  </md-card>
+</md-card>

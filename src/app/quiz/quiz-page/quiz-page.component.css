@@ -1,0 +1,14 @@
+.q-card {
+  width: 80%;
+  margin: 10% 8% 0% 8%;
+}
+
+.gift-card {
+    width: 200px;
+    margin: 3% 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+}

@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="header_content" routerLink="/home">
+        <div  style="width:60px">
+            <md-icon style="font-size:45px"><span class="gold">card_giftcard</span></md-icon>
+        </div>
+        <div class="title_content">
+            <div class="title"><span class="gold">Gift Hunt</span> </div>
+            <div class="userInfo" *ngIf='auth.loginData?.emailVerified'>
+                <span class="silver">
+                A crazy birthday gift for my dear  {{auth.loginData?.displayName}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="user">
+        <app-login></app-login>
+    </div>
+</div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

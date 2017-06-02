@@ -1,0 +1,25 @@
+<div *ngIf="!auth.loginData">
+  <md-card class="logout-card">
+    <md-card-content>
+      <p style="text-align:center">
+        Click
+        <md-icon>face</md-icon> to continue...
+      </p>
+    </md-card-content>
+  </md-card>
+</div>
+<div *ngIf="auth.loginData">
+  <md-card class="logout-card">
+    <md-card-title><p style="text-align:center">Welcome to Gift Hunt</p></md-card-title>
+    <md-card-content>
+      <p style="text-align:justify">
+        I have a suprise gift for you. 
+        <br/> <br/> 
+        Get your clues by answering the following series of questions.
+
+      </p>
+    <button md-button style="position:absolute; bottom:10px;right:10px;" routerLink="/quiz">Continue</button>
+    </md-card-content>
+
+  </md-card>
+</div>

@@ -1,0 +1,18 @@
+<h2>Admin Page </h2>
+<md-card>
+  <form name="f1">
+    <md-input-container>
+      <input name="newNameInputField1" mdInput placeholder="Question" [(ngModel)]="questionLine.question"><br/>
+    </md-input-container>
+    <md-input-container>
+      <input name="newNameInputField2" mdInput placeholder="Answer" [(ngModel)]="questionLine.answer">
+    </md-input-container>
+    <button md-raised-button (click)="addData()">Add</button>
+  </form>
+</md-card>
+
+isGiftAvailabe: {{isGiftAvailable}}
+<button md-raised-button (click)="setGiftAvailable(true)">Enable</button>
+<button md-raised-button (click)="setGiftAvailable(false)">Diable</button>
+
+<app-quiz-page></app-quiz-page>
